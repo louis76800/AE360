@@ -1,0 +1,26 @@
+﻿<Window x:Class="pb360.components.Inscription.Window_choix_site"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pb360.components.Inscription"
+        mc:Ignorable="d"
+        
+        Title="Choix du service" Height="450" Width="800" Icon="logo.png">
+    <Grid>
+        <DataGrid x:Name="listDataBiding_site" Grid.Row="2" Grid.RowSpan="9" Grid.ColumnSpan="5" Panel.ZIndex="{Binding Zindex}" ItemsSource="{Binding clients}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" Margin="0,3.4,-4.57,-0.4">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ville"   Width="1*" Binding="{Binding Ville}" />
+                <DataGridTextColumn Header="Pays"   Width="1*" Binding="{Binding Pays}" />
+                <DataGridTemplateColumn Header="Confirmer"  Width="1*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  FontSize="14" Click="buttonValidation_Click" Content="Valider"   >
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

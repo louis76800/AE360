@@ -1,0 +1,68 @@
+﻿<Window x:Class="pb360.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        KeyDown="windown_KeyDown"
+        Closing="DataWindow_Closing"  
+        WindowStyle="ThreeDBorderWindow"
+        MaxHeight="550"
+        MaxWidth="1100"
+        MinHeight="550"
+        MinWidth="1100"
+        Title="AE360" Height="550" Width="1100" Icon="logo.png">
+    
+    <Grid RenderTransformOrigin="0.503,0.548" Margin="0,0,8,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*" />
+            <ColumnDefinition Width="27*" />
+            <ColumnDefinition Width="99" />
+            <ColumnDefinition Width="404*" />
+            <ColumnDefinition Width="99" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="99" />
+
+            <ColumnDefinition Width="404*" />
+            <ColumnDefinition Width="153" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="55*" />
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="167*" />
+            <RowDefinition Height="55*" />
+            <RowDefinition Height="55*" />
+            <RowDefinition Height="55*" />
+            <RowDefinition Height="55*" />
+            <RowDefinition Height="55*" />
+
+
+        </Grid.RowDefinitions>
+        <Button Name="deconnectionButton"  Click="deconnectionButton_Click" Background="White" Grid.Column="2" >
+            <Image Source="deconexion.png"></Image>
+        </Button>
+        <Button Name="retour"  Click="Button_Click_retour" Content="Retour" Grid.Column="3"></Button>
+
+
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="5"  Grid.Column="3" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"  Text="Bienvenue sur AE360 votre annuaire d'entreprise. " ></TextBlock>
+        <TextBlock Grid.Row="4"  Grid.ColumnSpan="5" Grid.Column="3" FontSize="20" HorizontalAlignment="Center" Text="Pour commencer, merci de vous connecter.  " ></TextBlock>
+
+
+        <TextBlock Grid.Row="5" Text="E-mail" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="3"></TextBlock>
+        <TextBlock Grid.Row="5" Text="Mot de passe" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="7"></TextBlock>
+
+
+        <TextBox  x:Name="email" Grid.Row="6" UndoLimit="1" FontSize="20" VerticalAlignment="Center" Grid.Column="3" ></TextBox>
+        <PasswordBox  x:Name="pass" Grid.Row="6"  FontSize="20" VerticalAlignment="Center"  Grid.Column="7"  />
+
+
+        <Button x:Name="inscription" Content="Inscription"  Grid.Row="7" FontSize="20" VerticalAlignment="Center"  Click="Button_Click_inscription" Grid.Column="4"></Button>
+        <Button x:Name="envoie" Content="Envoyer"  Grid.Row="7" FontSize="20" VerticalAlignment="Center"   Grid.Column="6" Click="Button_Click_connection"></Button>
+
+
+        <Frame x:Name="Contents"  Grid.RowSpan="50" FontSize="40" Grid.ColumnSpan="50" Grid.Row="1"  NavigationUIVisibility="Hidden"/>
+
+    </Grid>
+</Window>
